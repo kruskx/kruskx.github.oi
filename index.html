@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cool Animated Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset & base */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(30, 60, 114, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        nav .logo {
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            user-select: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ff6f61;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+        /* Hero */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            user-select: none;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+        header p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: #cfcfcf;
+            animation: fadeInUp 1.3s ease forwards;
+            opacity: 0;
+        }
+        header button {
+            background: #ff6f61;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 111, 97, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.6s ease forwards;
+            opacity: 0;
+        }
+        header button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.9);
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Sections */
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #fff;
+            user-select: none;
+        }
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 30px;
+        }
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(15px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(255, 111, 97, 0.6);
+            background: rgba(255, 111, 97, 0.2);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        .card p {
+            color: #ddd;
+            line-height: 1.4;
+            font-size: 1rem;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #aaa;
+            user-select: none;
+            background: #111;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            nav {
+                padding: 15px 20px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">KRUŠKA</div>
+        <ul>
+            <li><a href="#about">O meni</a></li>
+            <li><a href="#projects">Projekti</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Dobrodošao na moj sajt</h1>
+        <p>Ja sam programer i pravim kul stvari sa kodom. Pogledaj moje projekte ispod.</p>
+        <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Pogledaj projekte</button>
+    </header>
+
+    <section id="about">
+        <h2>O meni</h2>
+        <p style="max-width: 600px; margin: 0 auto; color:#ccc; text-align:center;">
+            Zovem se Kruška i volim da pravim moderne, animirane web sajtove. Uvek učim nove tehnologije i želim da napravim nešto što ljudi vole da koriste.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projekti</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Portfolio sajt</h3>
+                <p>Moderno dizajniran portfolio sa animacijama i responzivnošću.</p>
+            </div>
+            <div class="card">
+                <h3>Chat aplikacija</h3>
+                <p>Real-time chat app sa WebSocket podrškom i animiranim UI.</p>
+            </div>
+            <div class="card">
+                <h3>YouTube downloader</h3>
+                <p>Alat za skidanje videa i plejlisti direktno sa YouTube-a.</p>
+            </div>
+            <div class="card">
+                <h3>Blog platforma</h3>
+                <p>Mesto gde pišem o programiranju i tehnologiji, sa čistim UI-jem.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p style="max-width: 600px; margin: 0 auto; color:#ccc; text
